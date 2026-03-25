@@ -1,10 +1,10 @@
-class DnsResolver {
+class DnsResolverModel {
   final String name;
   final Uri url;
   final bool supportsGet;
   final bool isTrusted;
 
-  const DnsResolver({
+  const DnsResolverModel({
     required this.name,
     required this.url,
     this.supportsGet = false,

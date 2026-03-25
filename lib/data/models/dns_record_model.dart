@@ -1,5 +1,3 @@
-// ignore_for_file: invalid_annotation_target, non_constant_identifier_names
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'dns_record_model.freezed.dart';
@@ -9,7 +7,6 @@ part 'dns_record_model.g.dart';
 abstract class DnsRecordModel with _$DnsRecordModel {
   const DnsRecordModel._();
 
-  @JsonSerializable(fieldRename: FieldRename.none, explicitToJson: true)
   const factory DnsRecordModel({
     int? status,
     @JsonKey(name: 'TC') bool? truncatedFlag,
@@ -31,7 +28,6 @@ abstract class DnsRecordModel with _$DnsRecordModel {
 
 @freezed
 abstract class Question with _$Question {
-  @JsonSerializable(fieldRename: FieldRename.none, explicitToJson: true)
   const factory Question({required String name, required int type}) = _Question;
 
   factory Question.fromJson(Map<String, dynamic> json) =>
@@ -40,7 +36,6 @@ abstract class Question with _$Question {
 
 @freezed
 abstract class Answer with _$Answer {
-  @JsonSerializable(fieldRename: FieldRename.none, explicitToJson: true)
   const factory Answer({
     required String name,
     required int type,

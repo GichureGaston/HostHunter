@@ -7,8 +7,14 @@ environment:
   sdk: ^3.11.0
 
 dependencies:
+  build_runner: ^2.13.1
+  equatable: ^2.0.8
   flutter:
     sdk: flutter
+  freezed: ^3.2.5
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.11.0
+  json_serializable: ^6.13.1
 
 dev_dependencies:
   flutter_test:

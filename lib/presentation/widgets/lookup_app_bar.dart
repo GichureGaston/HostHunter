@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import '../../domain/entities/dns_resolver_entity.dart';
 
 class LookupAppBar extends StatelessWidget {
   final ResolverType activeResolverType;
 
-  const LookupAppBar({
-    super.key,
-    required this.activeResolverType,
-  });
+  const LookupAppBar({super.key, required this.activeResolverType});
 
   @override
   Widget build(BuildContext context) {
-    final isSecure = activeResolverType == ResolverType.doh || activeResolverType == ResolverType.dot;
+    final isSecure =
+        activeResolverType == ResolverType.doh ||
+        activeResolverType == ResolverType.dot;
 
     return SliverAppBar(
       expandedHeight: 180,
@@ -75,7 +75,9 @@ class _SecurityBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       decoration: BoxDecoration(
-        color: isSecure ? Colors.green.withValues(alpha: 0.2) : Colors.amber.withValues(alpha: 0.2),
+        color: isSecure
+            ? Colors.green.withValues(alpha: 0.2)
+            : Colors.amber.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: isSecure ? Colors.green : Colors.amber,
@@ -88,7 +90,7 @@ class _SecurityBadge extends StatelessWidget {
           Icon(
             isSecure ? Icons.verified_user : Icons.warning_rounded,
             size: 10,
-            color: isSecure ? const Color(0xFFFFD700) : Colors.amber, // Gold for Secure icon
+            color: isSecure ? const Color(0xFFFFD700) : Colors.amber,
           ),
           const SizedBox(width: 4),
           Text(

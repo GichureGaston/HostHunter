@@ -1,5 +1,6 @@
-import 'dart:typed_data';
 import 'dart:math';
+import 'dart:typed_data';
+
 import '../models/dns_record_model.dart';
 
 class DnsPacketCodec {
@@ -137,7 +138,6 @@ class DnsByteReader {
     while (true) {
       final length = bytes[offset];
 
-      // Pointer compression (
       if ((length & 0xC0) == 0xC0) {
         final pointer = ((length & 0x3F) << 8) | bytes[offset + 1];
         originalOffset ??= offset + 2;
